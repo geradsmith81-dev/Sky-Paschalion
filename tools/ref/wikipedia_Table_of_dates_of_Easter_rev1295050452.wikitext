@@ -1,0 +1,67 @@
+{| class="wikitable {{{class|}}}"
+|+ {{{title|Table of (Gregorian) dates of [[Easter]] {{#ifexpr:{{{min|2015}}}<2001|2001|{{{min|2015}}}}}–{{#ifexpr:{{{max|2030}}}>2045|2045|{{{max|2030}}}}}<ref>{{cite web
+| url = https://www.oikoumene.org/resources/documents/towards-a-common-date-for-easter
+| title = Towards a Common Date for Easter 
+| publisher = World Council of Churches (WCC) / Middle East Council of Churches Consultation (MECC)
+| place = Aleppo, Syria
+| date = 10 March 1997}}</ref>}}}
+|-
+!style="width:3em"| Year
+{{#ifeq:{{{moon|}}}|off||!style="width:5em" title="First full moon after the Northward (i.e. March) equinox at the meridian of Jerusalem; “vernal full moon”"{{!}} {{#ifeq:{{{format|}}}|narrow|Moon|Full Moon}}
+!style="width:5em" title="Passover by current Jewish reckoning"{{!}} {{#ifeq:{{{format|}}}|narrow|Jewish|[[Judaism|Jewish]] [[Passover]] {{#ifeq:{{{notes|}}}||{{NoteTag|Jewish Passover is on Nisan 15 of its calendar. It commences at sunset preceding the date indicated (as does Easter by some traditions).}}|}}}}}}
+!style="width:5em" title="Easter/Pascha by astronomical reckoning"| {{#ifeq:{{{format|}}}|narrow|Astronom.|[[Aleppo Easter dating method|Astronomical]] Easter {{#ifeq:{{{notes|}}}||{{NoteTag|Astronomical Easter is the first Sunday after the astronomical [[full moon]] after the astronomical [[March equinox]] as measured at the meridian of Jerusalem according to the [[World Council of Churches|WCC]] proposal.}}|}}}}
+!style="width:5em" title="Easter/Pascha by current Gregorian reckoning"| {{#ifeq:{{{format|}}}|narrow|Gregorian|[[Gregorian calendar|Gregorian]] Easter}}
+!style="width:5em" title="Easter/Pascha by current Julian reckoning"| {{#ifeq:{{{format|}}}|narrow|Julian|[[Julian calendar|Julian]] Easter}} {{#ifeq:{{{fixed|}}}|on|!! W14-7 !! 2nd April <br/>Sunday !! 15th <br/>Sunday !! 2nd April <br/>weekend !! W15-7 |}}
+|-
+| <!-- Pipe needed here to avoid fostered content Lint error. Rows 2001 ... 2014 don't display, probably because of min parameter. -->
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2001|April 8|April 15|April 15|April 15|April 8|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2002|March 28|March 31|March 31|May 5|March 28|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2003|April 16|April 20|April 20|April 27|April 17|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2004|April 5|April 11|April 11|April 11|April 6|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2005|March 25|March 27|March 27|May 1|April 24|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2006|April 13|April 16|April 16|April 23|April 13|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2007|April 2|April 8|April 8|April 8|April 3|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2008|March 21|March 23|March 23|April 27|April 20|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2009|April 9|April 12|April 12|April 19|April 9|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2010|March 30|April 4|April 4|April 4|March 30|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2011|April 18|April 24|April 24|April 24|April 19|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2012|April 6|April 8|April 8|April 15|April 7|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2013|March 27|March 31|March 31|May 5|March 26|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2014|April 15|April 20|April 20|April 20|April 15|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2015|April 4|April 5|April 5|April 12|April 4|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2016|March 23|March 27|March 27|May 1|April 23|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2017|April 11|April 16|April 16|April 16|April 11|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2018|March 31|April 1|April 1|April 8|March 31|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2019|March 20|March 24|April 21|April 28|April 20|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2020|April 8|April 12|April 12|April 19|April 9|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2021|March 28|April 4|April 4|May 2|March 28|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2022|April 16|April 17|April 17|April 24|April 16|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2023|April 6|April 9|April 9|April 16|April 6|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2024|March 25|March 31|March 31|May 5|April 23|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2025|April 13|April 20|April 20|April 20|April 13|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+<!-- the following years are not covered by the WCC source: -->
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2026|April 3|April 5|April 5|April 12|April 2|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}<!--April 2?-->
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2027|March 22|March 28|March 28|May 2|April 22|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2028|April 9|April 16|April 16|April 16|April 11|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2029|March 29|April 1|April 1|April 8|March 31|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}<!--March 30?-->
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2030|April 17|April 21|April 21|April 28|April 18|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}<!--April 18?-->
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2031|April 7|April 13|April 13|April 13|April 8|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2032|March 27|March 28|March 28|May 2|March 27|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2033|April 14|April 17|April 17|April 24|April 14|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2034|April 3|April 9|April 9|April 9|April 4|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2035|March 24|March 25|March 25|April 29|April 24|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2036|April 10|April 13|April 13|April 20|April 12|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2037|March 31|April 5|April 5|April 5|March 31|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2038|March 21|March 28|April 25|April 25|April 20|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2039|April 9|April 10|April 10|April 17|April 9|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2040|March 28|April 1|April 1|May 6|March 29|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2041|April 16|April 21|April 21|April 21|April 16|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2042|April 5|April 6|April 6|April 13|April 5|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2043|March 25|March 29|March 29|May 3|April 25|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2044|April 12|April 17|April 17|April 24|April 12|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{Table of dates of Easter/row|fmt={{{format|}}}|y=2045|April 1|April 2|April 9|April 9|April 2|min={{{min|2015}}}|max={{{max|2030}}}|ext={{{fixed|}}}|moon={{{moon|}}}}}
+{{#ifeq:{{{nonotelist|{{{notes|}}}}}}||{{!}}-
+{{!}} colspan=6 {{!}} {{NoteFoot}}}}
+|}<noinclude>
+{{Documentation}}
+</noinclude>

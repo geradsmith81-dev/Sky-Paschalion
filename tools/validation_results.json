@@ -1,0 +1,521 @@
+{
+ "easter_vs_dateutil": {
+  "years": "1583-2299",
+  "n": 717,
+  "western_method3": 717,
+  "eastern_method2_gregorian": 717,
+  "eastern_method1_julian": 717,
+  "easter_is_sunday": {
+   "western": 717,
+   "eastern": 717
+  },
+  "easter_minus_pfm_in_1_7": {
+   "western": 717,
+   "eastern": 717
+  },
+  "pfm_minus_ecclesiastical_equinox_days_range": {
+   "western": [
+    0,
+    28
+   ],
+   "eastern": [
+    0,
+    28
+   ]
+  }
+ },
+ "western_eastern_same_day_1583_2299": 226,
+ "western_eastern_same_day_1900_2099": 57,
+ "astronomical": {
+  "years": "1850-2149",
+  "n": 300,
+  "equal_western": 269,
+  "equal_eastern": 90,
+  "equal_both": 77,
+  "equal_neither": 18,
+  "astro_minus_western_days": {
+   "-28": 10,
+   "-7": 6,
+   "0": 269,
+   "7": 15
+  },
+  "astro_minus_eastern_days": {
+   "-35": 74,
+   "-28": 16,
+   "-7": 120,
+   "0": 90
+  },
+  "differs_if_IST_UTC+2": 1,
+  "IST_years": [
+   1873
+  ],
+  "differs_if_UTC": 4,
+  "UTC_years": [
+   1873,
+   1998,
+   2120,
+   2143
+  ],
+  "date_based_equinox_rule_differs": [
+   {
+    "year": 1886,
+    "instant_rule": "1886-04-25",
+    "date_rule": "1886-03-21"
+   },
+   {
+    "year": 1905,
+    "instant_rule": "1905-04-23",
+    "date_rule": "1905-03-26"
+   },
+   {
+    "year": 1981,
+    "instant_rule": "1981-04-26",
+    "date_rule": "1981-03-22"
+   },
+   {
+    "year": 2000,
+    "instant_rule": "2000-04-23",
+    "date_rule": "2000-03-26"
+   },
+   {
+    "year": 2068,
+    "instant_rule": "2068-04-22",
+    "date_rule": "2068-03-25"
+   }
+  ],
+  "knife_edge_lt_1h": [
+   {
+    "year": 1869,
+    "easter": "1869-03-28",
+    "equinox_utc": "1869-03-20 13:31",
+    "full_moon_utc": "1869-03-27 21:32",
+    "full_moon_jerusalem_lmt": "1869-03-27 23:53 Sat",
+    "h_from_sat_sun_midnight": -0.11,
+    "h_fm_after_equinox": 176.02,
+    "h_prev_fm_before_equinox": 529.45,
+    "western": "1869-03-28",
+    "eastern": "1869-05-02"
+   },
+   {
+    "year": 1873,
+    "easter": "1873-04-20",
+    "equinox_utc": "1873-03-20 12:51",
+    "full_moon_utc": "1873-04-12 21:50",
+    "full_moon_jerusalem_lmt": "1873-04-13 00:11 Sun",
+    "h_from_sat_sun_midnight": 0.19,
+    "h_fm_after_equinox": 560.99,
+    "h_prev_fm_before_equinox": 151.13,
+    "western": "1873-04-13",
+    "eastern": "1873-04-20"
+   },
+   {
+    "year": 1974,
+    "easter": "1974-04-07",
+    "equinox_utc": "1974-03-21 00:06",
+    "full_moon_utc": "1974-04-06 21:00",
+    "full_moon_jerusalem_lmt": "1974-04-06 23:21 Sat",
+    "h_from_sat_sun_midnight": -0.65,
+    "h_fm_after_equinox": 404.9,
+    "h_prev_fm_before_equinox": 302.06,
+    "western": "1974-04-14",
+    "eastern": "1974-04-14"
+   },
+   {
+    "year": 1998,
+    "easter": "1998-04-19",
+    "equinox_utc": "1998-03-20 19:54",
+    "full_moon_utc": "1998-04-11 22:23",
+    "full_moon_jerusalem_lmt": "1998-04-12 00:44 Sun",
+    "h_from_sat_sun_midnight": 0.74,
+    "h_fm_after_equinox": 530.48,
+    "h_prev_fm_before_equinox": 183.34,
+    "western": "1998-04-12",
+    "eastern": "1998-04-19"
+   },
+   {
+    "year": 2120,
+    "easter": "2120-04-21",
+    "equinox_utc": "2120-03-20 09:31",
+    "full_moon_utc": "2120-04-13 22:23",
+    "full_moon_jerusalem_lmt": "2120-04-14 00:44 Sun",
+    "h_from_sat_sun_midnight": 0.74,
+    "h_fm_after_equinox": 588.88,
+    "h_prev_fm_before_equinox": 121.02,
+    "western": "2120-04-14",
+    "eastern": "2120-04-21"
+   },
+   {
+    "year": 2123,
+    "easter": "2123-04-11",
+    "equinox_utc": "2123-03-21 02:51",
+    "full_moon_utc": "2123-04-10 20:57",
+    "full_moon_jerusalem_lmt": "2123-04-10 23:18 Sat",
+    "h_from_sat_sun_midnight": -0.69,
+    "h_fm_after_equinox": 498.11,
+    "h_prev_fm_before_equinox": 213.33,
+    "western": "2123-04-11",
+    "eastern": "2123-04-18"
+   }
+  ],
+  "knife_edge_lt_2h_years": [
+   1869,
+   1873,
+   1971,
+   1974,
+   1981,
+   1998,
+   2120,
+   2123,
+   2143
+  ],
+  "western_diverge_2001_2149": [
+   2019,
+   2038,
+   2045,
+   2049,
+   2057,
+   2069,
+   2076,
+   2089,
+   2095,
+   2096,
+   2106,
+   2114,
+   2119,
+   2120,
+   2133,
+   2143,
+   2147
+  ]
+ },
+ "wcc_table_2001_2025": {
+  "n": 25,
+  "easter_match": 25,
+  "full_moon_date_match": 24,
+  "mismatches": [
+   {
+    "year": 2019,
+    "table_easter": "03-24",
+    "engine_easter": "2019-03-24",
+    "table_fm": "03-20",
+    "engine_fm_lmt": "03-21 04:03",
+    "engine_fm_utc": "03-21 01:42",
+    "equinox_utc": "03-20 21:58"
+   }
+  ]
+ },
+ "wikipedia_extension_2026_2045": {
+  "n": 20,
+  "easter_match": 20,
+  "full_moon_date_match": 17,
+  "mismatches": [
+   {
+    "year": 2026,
+    "table_easter": "04-05",
+    "engine_easter": "2026-04-05",
+    "table_fm": "04-03",
+    "engine_fm_lmt": "04-02 04:32",
+    "engine_fm_utc": "04-02 02:11"
+   },
+   {
+    "year": 2029,
+    "table_easter": "04-01",
+    "engine_easter": "2029-04-01",
+    "table_fm": "03-29",
+    "engine_fm_lmt": "03-30 04:47",
+    "engine_fm_utc": "03-30 02:26"
+   },
+   {
+    "year": 2030,
+    "table_easter": "04-21",
+    "engine_easter": "2030-04-21",
+    "table_fm": "04-17",
+    "engine_fm_lmt": "04-18 05:40",
+    "engine_fm_utc": "04-18 03:20"
+   }
+  ]
+ },
+ "calendars_daily_1850_2149": {
+  "days": 109573,
+  "coptic": 109573,
+  "coptic_back": 109573,
+  "julian": 109573,
+  "julian_back": 109573,
+  "ethiopian_vs_convertdate_coptic_plus_276": 109573,
+  "ethiopian_pkg_comparable": 107471,
+  "ethiopian_pkg_not_comparable": 2102,
+  "ethiopian": 102459,
+  "ethiopian_back": 102457,
+  "byzantine": 109573,
+  "ethiopian_pkg_errors_sample": [
+   "1850-09-05 -> (1842, 13, 1): ValueError('month must be in 1..12')",
+   "1850-09-06 -> (1842, 13, 2): ValueError('month must be in 1..12')",
+   "1850-09-07 -> (1842, 13, 3): ValueError('month must be in 1..12')"
+  ],
+  "ethiopian_pkg_mismatch_years": [
+   1901,
+   1902,
+   1903,
+   1904,
+   1905,
+   1906,
+   1907,
+   2101,
+   2102,
+   2103,
+   2104,
+   2105,
+   2106,
+   2107
+  ],
+  "genna_29_tahsas_1900_2099": {
+   "7 Jan": 151,
+   "8 Jan": 49
+  },
+  "genna_1901_engine": "1901-01-07",
+  "genna_1901_ethiopian_date_pkg": "1901-01-06"
+ },
+ "roundtrip": {
+  "daily_1583_2299_days": 261879,
+  "fail": {
+   "gregorian": 0,
+   "julian": 0,
+   "revised_julian": 0,
+   "coptic": 0,
+   "ethiopian": 0,
+   "byzantine": 0
+  },
+  "every_13th_day_0002_9999": 280900,
+  "wide_fail": {
+   "gregorian": 0,
+   "julian": 0,
+   "revised_julian": 0,
+   "coptic": 0,
+   "ethiopian": 0,
+   "byzantine": 0
+  }
+ },
+ "revised_julian": {
+  "equal_gregorian_1600-03-01_2799-02-28": 437925,
+  "days": 437925,
+  "daybyday_reference_2000_9999_match": 2921940,
+  "reference_days": 2921940,
+  "spot": {
+   "2800-02-28": "2800-02-28",
+   "2800-02-29": "2800-03-01",
+   "2800-03-01": "2800-03-02",
+   "2900-02-28": "2900-02-29",
+   "2900-03-01": "2900-03-01",
+   "3200-03-01": "3200-03-02",
+   "3300-03-01": "3300-03-01"
+  },
+  "leap_centuries_2000_4000": [
+   2000,
+   2400,
+   2900,
+   3300,
+   3800
+  ]
+ },
+ "anchors": {
+  "nayrouz_is_29_or_30_aug_julian": [
+   299,
+   299
+  ],
+  "nayrouz_gregorian_1900_2099": {
+   "n": 200,
+   "rule_ok": 200,
+   "11 Sep": 150,
+   "12 Sep": 50
+  },
+  "enkutatash_equals_nayrouz": [
+   299,
+   299
+  ],
+  "coptic_29_koiak_1900_2099": {
+   "n": 200,
+   "8_jan_only_in_gregorian_leap_years": true,
+   "7 Jan": 151,
+   "8 Jan": 49,
+   "years_with_8_jan_where_28_koiak_is_7_jan": 49
+  },
+  "nayrouz_2025": "2025-09-11",
+  "enkutatash_2025": "2025-09-11",
+  "byzantine": {
+   "AM_7534_starts": "2025-09-14",
+   "2026-01-01": "19 4/7534 (byzantine)",
+   "2026-09-14": "1 1/7535 (byzantine)",
+   "indiction_7534": 4
+  },
+  "coptic_epoch_julian": "29 8/284 (julian)",
+  "ethiopian_epoch_julian": "29 8/8 (julian)"
+ },
+ "movable_weekday_checks": {
+  "checks": 39882,
+  "wrong": 0,
+  "missing_contract_keys": []
+ },
+ "apostles_fast_eastern_1900_2099": {
+  "julian": {
+   "min_days": 8,
+   "max_days": 42,
+   "years_omitted": 0
+  },
+  "revised_julian": {
+   "min_days": 0,
+   "max_days": 29,
+   "years_omitted": 22
+  },
+  "coptic": {
+   "min_days": 15,
+   "max_days": 49,
+   "years_omitted": 0
+  }
+ },
+ "sample_2026": {
+  "western": {
+   "zacchaeus_sunday": "2026-01-18",
+   "publican_pharisee": "2026-01-25",
+   "septuagesima": "2026-02-01",
+   "prodigal_son": "2026-02-01",
+   "sexagesima": "2026-02-08",
+   "nineveh_fast_start": "2026-01-26",
+   "nineveh_fast_end": "2026-01-28",
+   "meatfare_sunday": "2026-02-08",
+   "quinquagesima": "2026-02-15",
+   "cheesefare_sunday": "2026-02-15",
+   "great_lent_start_coptic": "2026-02-09",
+   "clean_monday": "2026-02-16",
+   "ash_wednesday": "2026-02-18",
+   "laetare_sunday": "2026-03-15",
+   "lazarus_saturday": "2026-03-28",
+   "palm_sunday": "2026-03-29",
+   "holy_thursday": "2026-04-02",
+   "good_friday": "2026-04-03",
+   "holy_saturday": "2026-04-04",
+   "pascha": "2026-04-05",
+   "easter_monday": "2026-04-06",
+   "thomas_sunday": "2026-04-12",
+   "mid_pentecost": "2026-04-29",
+   "ascension": "2026-05-14",
+   "pentecost": "2026-05-24",
+   "whit_monday": "2026-05-25",
+   "trinity_sunday": "2026-05-31",
+   "all_saints_sunday": "2026-05-31",
+   "corpus_christi": "2026-06-04",
+   "sacred_heart": "2026-06-12",
+   "apostles_fast_start": "2026-06-01",
+   "apostles_fast_start_coptic": "2026-05-25"
+  },
+  "eastern": {
+   "zacchaeus_sunday": "2026-01-25",
+   "publican_pharisee": "2026-02-01",
+   "septuagesima": "2026-02-08",
+   "prodigal_son": "2026-02-08",
+   "sexagesima": "2026-02-15",
+   "nineveh_fast_start": "2026-02-02",
+   "nineveh_fast_end": "2026-02-04",
+   "meatfare_sunday": "2026-02-15",
+   "quinquagesima": "2026-02-22",
+   "cheesefare_sunday": "2026-02-22",
+   "great_lent_start_coptic": "2026-02-16",
+   "clean_monday": "2026-02-23",
+   "ash_wednesday": "2026-02-25",
+   "laetare_sunday": "2026-03-22",
+   "lazarus_saturday": "2026-04-04",
+   "palm_sunday": "2026-04-05",
+   "holy_thursday": "2026-04-09",
+   "good_friday": "2026-04-10",
+   "holy_saturday": "2026-04-11",
+   "pascha": "2026-04-12",
+   "easter_monday": "2026-04-13",
+   "thomas_sunday": "2026-04-19",
+   "mid_pentecost": "2026-05-06",
+   "ascension": "2026-05-21",
+   "pentecost": "2026-05-31",
+   "whit_monday": "2026-06-01",
+   "trinity_sunday": "2026-06-07",
+   "all_saints_sunday": "2026-06-07",
+   "corpus_christi": "2026-06-11",
+   "sacred_heart": "2026-06-19",
+   "apostles_fast_start": "2026-06-08",
+   "apostles_fast_start_coptic": "2026-06-01"
+  },
+  "astronomical": {
+   "zacchaeus_sunday": "2026-01-18",
+   "publican_pharisee": "2026-01-25",
+   "septuagesima": "2026-02-01",
+   "prodigal_son": "2026-02-01",
+   "sexagesima": "2026-02-08",
+   "nineveh_fast_start": "2026-01-26",
+   "nineveh_fast_end": "2026-01-28",
+   "meatfare_sunday": "2026-02-08",
+   "quinquagesima": "2026-02-15",
+   "cheesefare_sunday": "2026-02-15",
+   "great_lent_start_coptic": "2026-02-09",
+   "clean_monday": "2026-02-16",
+   "ash_wednesday": "2026-02-18",
+   "laetare_sunday": "2026-03-15",
+   "lazarus_saturday": "2026-03-28",
+   "palm_sunday": "2026-03-29",
+   "holy_thursday": "2026-04-02",
+   "good_friday": "2026-04-03",
+   "holy_saturday": "2026-04-04",
+   "pascha": "2026-04-05",
+   "easter_monday": "2026-04-06",
+   "thomas_sunday": "2026-04-12",
+   "mid_pentecost": "2026-04-29",
+   "ascension": "2026-05-14",
+   "pentecost": "2026-05-24",
+   "whit_monday": "2026-05-25",
+   "trinity_sunday": "2026-05-31",
+   "all_saints_sunday": "2026-05-31",
+   "corpus_christi": "2026-06-04",
+   "sacred_heart": "2026-06-12",
+   "apostles_fast_start": "2026-06-01",
+   "apostles_fast_start_coptic": "2026-05-25"
+  }
+ },
+ "sky": {
+  "jerusalem_2026_03_20": {
+   "tz": "Asia/Jerusalem",
+   "dawn_astronomical": "04:21:55",
+   "dawn_nautical": "04:50:30",
+   "dawn_civil": "05:18:51",
+   "sunrise": "05:43:09",
+   "solar_noon": "11:46:32",
+   "sunset": "17:50:25",
+   "dusk_civil": "18:14:46",
+   "dusk_nautical": "18:43:09",
+   "dusk_astronomical": "19:11:48",
+   "solar_midnight": "23:46:23",
+   "dawn": "05:18:51",
+   "dusk": "18:14:46",
+   "day_length_h": 12.121061317222223,
+   "polar": null
+  },
+  "sext_minus_solar_noon_s_jerusalem_2026_06_21": -0.0,
+  "london_2026_12_21_day_hour_min": 39.14,
+  "london_2026_12_21_night_hour_min": 80.9,
+  "bearing_to_jerusalem": {
+   "Rome": 111.78,
+   "Moscow": 184.99,
+   "Addis Ababa": 352.34,
+   "New York": 54.06
+  },
+  "sunrise_azimuth_2026_03_20_equator": 90.18,
+  "tromso_2026_06_21_polar": "polar_day",
+  "canonical_hours_non_decreasing": [
+   63,
+   63
+  ],
+  "moon_phase_at_2025_paschal_fm": {
+   "name": "Full Moon",
+   "elongation": 180.0,
+   "illumination": 0.9996
+  }
+ },
+ "runtime_s": 112.9,
+ "ephemeris": "de440s.bsp",
+ "generated_utc": "2026-11-15 19:50"
+}

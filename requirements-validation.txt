@@ -1,0 +1,6 @@
+# only for tools/validate.py (engine validation) and tools/js_check.py; not needed to run the app
+-r requirements.txt
+python-dateutil
+convertdate
+ethiopian-date
+quickjs
