@@ -285,6 +285,13 @@ h1, h2, h3, h4 {{ font-family: {DISPLAY}; color: {GOLD}; letter-spacing: .02em; 
                color: {TEXT}; border: 1px solid {GOLD}; border-radius: 6px; padding: .7rem .85rem; box-shadow: 0 8px 24px rgba(0,0,0,.65);
                font-size: .86rem; line-height: 1.45; text-align: left; white-space: normal; font-weight: 400; }}
 .px-pop-r .px-popbody {{ left: auto; right: 0; }}
+.px-pop-inline {{ margin: 2px 2px 0 0; }}
+.px-pop-inline > summary .px-chip {{ margin: 0; }}
+.px-pop-inline[open] {{ display: block; }}
+.px-pop-inline .px-popbody {{ position: static; width: auto; max-width: 34rem; margin: 5px 0 4px 0; box-shadow: none; }}
+.px-pop > summary .px-fxname {{ text-decoration: underline dotted {MUTED}; text-underline-offset: 3px; }}
+.px-pop[open] > summary .px-fxname {{ color: {GOLD}; }}
+.px-pop > summary:focus-visible {{ outline: 2px solid {GOLD}; outline-offset: 2px; }}
 .px-pop-title {{ font-family: {DISPLAY}; color: {GOLD}; font-weight: 700; font-size: 1rem; margin-bottom: .3rem; }}
 .px-pop-src {{ color: {MUTED}; font-size: .78rem; margin-top: .45rem; font-style: italic; }}
 .px-orient {{ display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.1rem; background: {CARD};

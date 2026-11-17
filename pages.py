@@ -13,6 +13,7 @@ from datetime import date, datetime, timedelta
 import streamlit as st
 
 import calendars as cal
+import explain
 import feasts
 import liturgy as L
 import names
@@ -54,30 +55,75 @@ def rank_label(rank: str) -> str:
     return feasts.RANKS.get(rank, (9, rank.replace("_", " ")))[1]
 
 
-def chip_for(key: str, rank: str, kind: str, lang: str, variant=None) -> str:
+_ENTRY_CACHE: dict = {}
+
+
+def _entry_for(info, key: str):
+    """The feasts.py entry for `key` that applies to tradition info = (trad_key, cal, rule), or None."""
+    if not info:
+        return None
+    if info not in _ENTRY_CACHE:
+        eff = L.effective(*info)
+        idx = {}
+        for entries in (feasts.FIXED, feasts.MOVABLE, feasts.SPECIAL):
+            for e in entries:
+                if feasts._applies(e, eff):
+                    idx.setdefault(e["key"], e)
+        _ENTRY_CACHE[info] = (idx, eff.get("fixed_calendar", info[1]))
+    idx, c_own = _ENTRY_CACHE[info]
+    e = idx.get(key)
+    return (e, c_own) if e else None
+
+
+def explain_pop(key, inner: str, info=None, pop: str = "inline", text: str | None = None,
+                rank: str | None = None) -> str:
+    """Wrap a feast/fast name (chip or plain) in a click-to-open explanation. pop: inline | float | float_r."""
+    body = text if text is not None else explain.text(key) if key else None
+    if not body:
+        return inner
+    title = E(names.NAMES.get(key, {}).get("en", key.replace("_", " "))) if key else "Wednesday and Friday fast"
+    meta = []
+    if rank:
+        meta.append(E(rank_label(rank)))
+    ent = _entry_for(info, key) if key else None
+    if ent:
+        rt = _rule_text(*ent)
+        if rt:
+            meta.append(E(rt) if ("month" in ent[0] or "base" in ent[0]) else rt)
+    foot = f"<div class='px-pop-src'>{' · '.join(meta)}</div>" if meta else ""
+    cls = {"inline": "px-pop px-pop-inline", "float": "px-pop", "float_r": "px-pop px-pop-r"}.get(pop, "px-pop px-pop-inline")
+    return (f"<details class='{cls}'><summary title='Click for an explanation'>{inner}</summary>"
+            f"<div class='px-popbody'><div class='px-pop-title'>{title}</div>{E(body)}{foot}</div></details>")
+
+
+def chip_for(key: str, rank: str, kind: str, lang: str, variant=None, info=None, pop: str = "inline") -> str:
     k = theme.chip_kind(kind, rank)
     title = E(rank_label(rank))
-    return (f"<span class='px-chip' title='{title}' style='background:{theme.CHIP[k]}'>"
+    chip = (f"<span class='px-chip' title='{title}' style='background:{theme.CHIP[k]}'>"
             f"{L.feast_name_html(key, lang, variant)}</span>")
+    return explain_pop(key, chip, info, pop, rank=rank)
 
 
 def plain_chip(kind: str, text: str) -> str:
     return f"<span class='px-chip' style='background:{theme.CHIP[kind]}'>{E(text)}</span>"
 
 
-def day_chips(ctx, d: date, events=None, with_periods=True, with_weekly=True) -> str:
+def day_chips(ctx, d: date, events=None, with_periods=True, with_weekly=True, pop: str = "inline") -> str:
     k, c, r, lg, v = ctx["trad_key"], ctx["cal"], ctx["rule"], ctx["lang"], ctx["variant"]
+    info = (k, c, r)
     if events is None:
         events, _ = L.events_between(k, c, r, d, d)
-    out = [chip_for(key, rank, kind, lg, v) for dd, key, rank, kind in events if dd == d]
+    out = [chip_for(key, rank, kind, lg, v, info, pop) for dd, key, rank, kind in events if dd == d]
     shown = {key for dd, key, rank, kind in events if dd == d}
     if with_periods:
         for s, e, key in L.periods_covering(k, c, r, d):
             if key not in shown and s != e:
-                out.append(f"<span class='px-chip' title='{E(L.civil(s))} – {E(L.civil(e))}' "
-                           f"style='background:{theme.CHIP['fast']}'>{L.feast_name_html(key, lg, v)}</span>")
+                chip = (f"<span class='px-chip' title='{E(L.civil(s))} – {E(L.civil(e))}' "
+                        f"style='background:{theme.CHIP['fast']}'>{L.feast_name_html(key, lg, v)}</span>")
+                out.append(explain_pop(key, chip, info, pop))
     if with_weekly and L.is_weekly_fast(k, c, r, d):
-        out.append(plain_chip("fast", "Fast day (" + ("Friday" if d.weekday() == 4 else "Wednesday") + ")"))
+        out.append(explain_pop(None, plain_chip("fast", "Fast day (" + ("Friday" if d.weekday() == 4 else "Wednesday") + ")"),
+                               None, pop, text=explain.WEEKLY))
     return "".join(out)
 
 
@@ -269,7 +315,7 @@ def render_month(ctx):
 
     def cell(dd: date) -> tuple[str, str]:
         cx = cal.from_gregorian(c, dd)
-        chips = day_chips(ctx, dd, events)
+        chips = day_chips(ctx, dd, events, pop="inline" if ctx["phone"] else ("float_r" if dd.weekday() >= 4 else "float"))
         cls = []
         if dd.weekday() == 6:
             cls.append("px-sun")
@@ -334,7 +380,7 @@ def render_year(ctx):
     for dd, key, rank, kind in events:
         if kind == "fast":
             continue
-        rows.append([L.date_html(c, dd, lg), E(L.civil(dd)), chip_for(key, rank, kind, lg, v), E(rank_label(rank))])
+        rows.append([L.date_html(c, dd, lg), E(L.civil(dd)), chip_for(key, rank, kind, lg, v, (k, c, r)), E(rank_label(rank))])
         rc.append("px-today-row" if dd == d0 else "")
     st.html(table(["Date (" + E(cal.NAME[c]) + ")", "Civil date", "Feast", "Rank"], rows, rc))
 
@@ -344,7 +390,8 @@ def render_year(ctx):
         per += [p for p in L.year_events(k, c, r, gy)[1] if p[1] >= s and p[0] <= e and p not in per]
     per.sort()
     frows = [[L.date_html(c, a, lg, weekday=False), L.date_html(c, b, lg, weekday=False),
-              f"{(b - a).days + 1}", L.feast_name_html(key, lg, v)] for a, b, key in per]
+              f"{(b - a).days + 1}", explain_pop(key, f"<span class='px-fxname'>{L.feast_name_html(key, lg, v)}</span>",
+                                                   (k, c, r))] for a, b, key in per]
     st.html(table(["Begins", "Ends", "Days", "Fast"], frows))
     wf = sorted(dd for gy in range(s.year, e.year + 1) for dd in L.weekly_fasts(k, c, r, gy) if s <= dd <= e)
     st.caption(f"Besides these, {len(wf)} Wednesdays and Fridays in this year are kept as fast days "
@@ -365,7 +412,7 @@ def render_year(ctx):
                     if key in mv_keys and -80 <= (dd - P).days <= 80})
     st.html(table(["Days from Pascha", "Date (" + E(cal.NAME[c]) + ")", "Civil date", "Feast or fast"],
                   [[f"{(dd - P).days:+d}" if dd != P else "0", L.date_html(c, dd, lg), E(L.civil(dd)),
-                    chip_for(key, rank, kind, lg, v)] for dd, key, rank, kind in mrows]))
+                    chip_for(key, rank, kind, lg, v, (k, c, r))] for dd, key, rank, kind in mrows]))
     with st.expander("Every date the engine derives from Pascha (all traditions)"):
         mv = L.movable(ps[0], r) or {}
         st.html(table(["Key", "Days from Pascha", "Civil date"],
@@ -412,7 +459,7 @@ def render_feasts(ctx):
             dd = ev.get(e["key"])
             src = " ".join(f"<a href='{E(u)}' target='_blank' rel='noopener'>[{i + 1}]</a>"
                            for i, u in enumerate(e.get("sources", [])))
-            rows.append([chip_for(e["key"], e.get("rank", "feast"), e.get("kind", "feast"), lg, v),
+            rows.append([chip_for(e["key"], e.get("rank", "feast"), e.get("kind", "feast"), lg, v, (k, c, r)),
                          E(group), E(_rule_text(e, eff["fixed_calendar"])),
                          E(rank_label(e.get("rank", ""))),
                          (L.date_html(c, dd, lg, weekday=False) if dd else "<span class='px-muted'>not this year</span>"),

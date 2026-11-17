@@ -96,3 +96,12 @@ Raphaël Bedros XXI Minassian, Milan Stipić.
 9. Roman transfers (Epiphany, Ascension, Corpus Christi to Sunday; Annunciation and Joseph out of Holy Week) are not applied.
 10. Byzantine abstinence gradations are not modelled. `weekly_fast_days()` removes only the main fast-free periods.
 11. `revised_julian` is computed as Gregorian. This is exact until 28 Feb 2800.
+
+## Feast and fast explanations (explain.py)
+
+Clicking a feast or fast name anywhere in the app opens a short explanation (added 17 November 2026).
+`explain.TEXT` holds one paragraph for each of the 95 feast and fast keys in feasts.py, plus `explain.WEEKLY` for
+the Wednesday and Friday fast. The texts were written for this app from standard reference knowledge
+(Gospel passages, councils, papal acts, UNESCO listings). They have **not** been checked one by one against the
+sources above. Dates and lengths that differ between churches are given in general terms. Under each text the
+popover shows the selected church's rank and rule, taken from feasts.py.

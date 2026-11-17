@@ -129,6 +129,15 @@ def test_names_cover_feasts_and_labels():
         assert isinstance(k, str) and isinstance(lang, str)
 
 
+def test_every_feast_and_fast_has_explanation():
+    import explain
+    keys = {e["key"] for grp in (feasts.FIXED, feasts.MOVABLE, feasts.SPECIAL) for e in grp}
+    missing = sorted(k for k in keys if not explain.TEXT.get(k, "").strip())
+    assert not missing, missing
+    assert not sorted(set(explain.TEXT) - keys), "explanations for unknown keys"
+    assert all(40 <= len(v) <= 600 for v in explain.TEXT.values())
+    assert explain.WEEKLY.strip()
+
 if __name__ == "__main__":
     import inspect
     fails = 0
