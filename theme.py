@@ -285,6 +285,7 @@ h1, h2, h3, h4 {{ font-family: {DISPLAY}; color: {GOLD}; letter-spacing: .02em; 
                color: {TEXT}; border: 1px solid {GOLD}; border-radius: 6px; padding: .7rem .85rem; box-shadow: 0 8px 24px rgba(0,0,0,.65);
                font-size: .86rem; line-height: 1.45; text-align: left; white-space: normal; font-weight: 400; }}
 .px-pop-r .px-popbody {{ left: auto; right: 0; }}
+.px-dlg .px-scroll {{ max-height: none; overflow-y: visible; }}
 .px-pop-inline {{ margin: 2px 2px 0 0; }}
 .px-pop-inline > summary .px-chip {{ margin: 0; }}
 .px-pop-inline[open] {{ display: block; }}

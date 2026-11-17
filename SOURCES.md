@@ -105,3 +105,23 @@ the Wednesday and Friday fast. The texts were written for this app from standard
 (Gospel passages, councils, papal acts, UNESCO listings). They have **not** been checked one by one against the
 sources above. Dates and lengths that differ between churches are given in general terms. Under each text the
 popover shows the selected church's rank and rule, taken from feasts.py.
+
+## Shared feasts and founding apostles (summary links, 17 November 2026)
+
+Two links under the page menu open summary windows.
+
+* **What all the churches share** (`common.py`). Feast keys differ by rite, so `common.GROUPS` maps each
+  observance to every key that expresses it (for example Pascha = `pascha` / `fasika`, Nativity = `nativity` /
+  `genna` / `nativity_theophany`). Each church is computed with its own calendar and Paschalion, as on the
+  Compare page. Counts reflect feasts.py, which lists major feasts only, so 'not listed' may be a gap in the data
+  (see the known gaps above). The first-attestation notes (`common.ATTESTED`) for Pascha, Good Friday, Palm
+  Sunday, Ascension, Pentecost, Great Lent, the Exaltation of the Cross and the Dormition come from the
+  'attestation' list in `data/early_church_meta.json` (Early Church research, 16 November 2026). That file has a
+  single combined entry for the Nativity and Theophany; it was split here into a Theophany note (c. 200) and a
+  Nativity note (4th century). The Nativity note's citation of the Chronograph of 354 (25 December at Rome, 336)
+  is **not** in that file: it was added for this app from general reference knowledge and is unverified. The
+  Wednesday/Friday note (Didache 8.1) was also added for this app.
+* **Churches by founding apostle** (`sects.APOSTLE_ORDER`, `sects.APOSTLES`, `sects.by_apostle()`). Each church is
+  listed once, under its principal apostle, marked as 'claimed' or 'via mother church', as decided on
+  16 November 2026 and copied from the same `early_church_meta.json`. These are traditions of origin, not
+  historical findings.

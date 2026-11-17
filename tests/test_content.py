@@ -138,6 +138,28 @@ def test_every_feast_and_fast_has_explanation():
     assert all(40 <= len(v) <= 600 for v in explain.TEXT.values())
     assert explain.WEEKLY.strip()
 
+def test_every_church_has_founding_apostle():
+    groups = sects.by_apostle()
+    assert sum(len(v) for v in groups.values()) == len(sects.TRADITIONS)
+    order = [a for a, _ in sects.APOSTLE_ORDER]
+    assert set(groups) <= set(order), set(groups) - set(order)
+    for t in sects.TRADITIONS:
+        a = sects.APOSTLES[t["key"]]
+        assert a[1] in ("claimed", "via mother church"), t["key"]
+
+
+def test_common_groups_use_known_keys():
+    keys = {e["key"] for grp in (feasts.FIXED, feasts.MOVABLE, feasts.SPECIAL) for e in grp}
+    try:
+        import common
+    except ImportError:          # common imports liturgy -> streamlit; skip where streamlit is absent
+        return
+    for g in common.GROUPS:
+        assert set(g[3]) <= keys, (g[0], set(g[3]) - keys)
+    sm = {g["key"]: g for g in common.summary(2026)}
+    assert sm["pascha"]["n"] == len(sects.TRADITIONS)
+    assert {(d.month, d.day): len(v) for d, v in sm["nativity"]["dates"]}.get((12, 25)) == 32
+
 if __name__ == "__main__":
     import inspect
     fails = 0

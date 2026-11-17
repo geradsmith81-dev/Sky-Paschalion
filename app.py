@@ -223,6 +223,15 @@ ctx = {
     "feast_cal": L.feast_calendar(trad, cal_key), "apply_preset": apply_preset,
 }
 
+# ---------------------------------------------------------------------------------------------- summary links
+_lk1, _lk2, _ = st.columns([1, 1, 1.4] if not phone else [1, 1, 0.01])
+if _lk1.button("What all the churches share", type="tertiary", icon=":material/join_inner:", key="lnk_common",
+               help="The feasts and fasts every church keeps, and on which days"):
+    pages.dialog_common(ctx)
+if _lk2.button("Churches by founding apostle", type="tertiary", icon=":material/account_tree:", key="lnk_apostles",
+               help="Which apostle each church traces its foundation to"):
+    pages.dialog_apostles(ctx)
+
 PAGES[page][1](ctx)
 
 st.html("<div class='px-meander' role='presentation' style='margin-top:1.2rem'></div>"

@@ -36,6 +36,11 @@ def build_cases() -> list[dict]:
     # 1. Today x every tradition (55), each with its own preset
     for t in sects.TRADITIONS:
         add(f"today/{t['key']}", "Today", t["key"])
+    # 1b. summary links under the menu (17 Nov 2026): both windows, from several pages and churches
+    for pg, tk in (("Today", "latin_catholic"), ("Month", "coptic_orthodox"), ("Year", "russian_orthodox"),
+                   ("Feasts", "ethiopian_orthodox"), ("Compare", "armenian_etchmiadzin")):
+        add(f"link/common/{pg}/{tk}", pg, tk, click="lnk_common", checks=["Kept by all 55 churches"])
+        add(f"link/apostles/{pg}/{tk}", pg, tk, click="lnk_apostles", checks=["via mother church"])
     # 2. every page with the default and with an Eastern, Oriental and East Syriac church
     pages = ["Today", "Month", "Year", "Feasts", "Paschalion", "Hours", "Compare", "Traditions", "How", "About"]
     for pg in pages:

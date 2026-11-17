@@ -13,6 +13,7 @@ from datetime import date, datetime, timedelta
 import streamlit as st
 
 import calendars as cal
+import common
 import explain
 import feasts
 import liturgy as L
@@ -724,3 +725,122 @@ def render_about(ctx):
         eph = "not loaded"
     st.caption(f"Ephemeris in use: {eph}. Place search: GeoNames (CC BY 4.0) via geonamescache. "
                "Magnetic declination: World Magnetic Model 2025 (NOAA/BGS) via pygeomag.")
+
+
+# ============================================================================== summary windows (links under the menu)
+def _pop_html(inner: str, title: str, body_html: str) -> str:
+    return (f"<details class='px-pop px-pop-inline'><summary title='Click to see the list'>{inner}</summary>"
+            f"<div class='px-popbody'><div class='px-pop-title'>{title}</div>{body_html}</div></details>")
+
+
+def _church_list(keys) -> str:
+    return "<br>".join(E(sects.get(k)["name_en"]) for k in keys)
+
+
+def _group_names(g) -> str:
+    seen, out = set(), []
+    for k in g["keys"]:
+        en = names.NAMES.get(k, {}).get("en", k.replace("_", " "))
+        if en not in seen:
+            seen.add(en)
+            out.append(en)
+    return " · ".join(out)
+
+
+def _group_cell(g) -> str:
+    k0 = g["key"] if g["key"] in explain.TEXT else g["keys"][0]
+    head = f"<span class='px-fxname'><b>{E(g['label'])}</b></span>"
+    cell = explain_pop(k0, head, None, "inline")
+    if " · " in _group_names(g) or _group_names(g) != g["label"]:
+        cell += f"<div class='px-muted' style='font-size:.8rem'>{E(_group_names(g))}</div>"
+    return cell
+
+
+def _dates_cell(g, year: int) -> str:
+    parts = []
+    for d, ks in g["dates"]:
+        lab = f"<span class='px-fxname'>{d.day} {d.strftime('%b')}</span>"
+        cnt = f"{len(ks)} church" + ("" if len(ks) == 1 else "es")
+        parts.append(_pop_html(lab, f"{d.day} {d.strftime('%B')} {year}: {cnt}", _church_list(ks))
+                     + f" <span class='px-muted' style='font-size:.8rem'>{cnt}</span>")
+    if g["undated"]:
+        parts.append(f"<span class='px-muted'>{len(g['undated'])} with no date in {year}</span>")
+    return "<br>".join(parts)
+
+
+def render_common(ctx):
+    y0 = ctx["today"].year
+    st.session_state.setdefault("common_year", y0)
+    y = int(st.number_input("Civil year", min_value=1583, max_value=4000, step=1, key="common_year"))
+    sm = common.summary(y)
+    total = len(sects.TRADITIONS)
+    allg = [g for g in sm if g["n"] == total]
+    most = [g for g in sm if g["n"] < total]
+    st.html(f"<div class='px-muted'>Every church in the app keeps these feasts and fasts, though often on different days: "
+            f"the Western and Eastern Paschalia, the Julian and Gregorian calendars and the Coptic and Ethiopian calendars "
+            f"move them apart, and the rites call them by different names. Dates are civil (Gregorian) dates in {y}, "
+            f"each church following its own calendar and Paschalion. Click a name for an explanation, or a date for the "
+            f"churches that keep it on that day.</div>")
+    rows = []
+    for g in allg:
+        att = common.ATTESTED.get(g["key"])
+        att_html = (_pop_html(f"<span class='px-fxname'>{E(att[0])}</span>", "Earliest evidence", E(att[1]))
+                    if att else "<span class='px-muted'>—</span>")
+        rows.append([_group_cell(g), E("Fast" if g["kind"] == "fast" else "Feast"), _dates_cell(g, y), att_html])
+    wk = common.weekly_fast_churches(y)
+    if wk == total:
+        rows.append([explain_pop(None, "<span class='px-fxname'><b>Wednesday and Friday fast</b></span>", None,
+                                 "inline", text=explain.WEEKLY),
+                     "Fast", "<span class='px-muted'>every week, outside fast-free weeks and great feasts "
+                             "(Latin Church: Fridays)</span>",
+                     _pop_html("<span class='px-fxname'>c. 100</span>", "Earliest evidence",
+                               "Didache 8.1: fast on Wednesday and Friday, not with the hypocrites on Monday and Thursday.")])
+    st.html(f"<div class='px-dlg'><h3 style='margin:.6rem 0 .2rem 0'>Kept by all {total} churches</h3>"
+            + table(["Feast or fast", "Kind", f"Dates in {y}", "First attested"], rows) + "</div>")
+    rows = []
+    for g in sorted(most, key=lambda g: -g["n"]):
+        miss = g["missing"]
+        miss_html = _pop_html(f"<span class='px-fxname'>{len(miss)} not listed</span>",
+                              f"Not listed for {len(miss)} church" + ("" if len(miss) == 1 else "es"), _church_list(miss))
+        rows.append([_group_cell(g), E("Fast" if g["kind"] == "fast" else "Feast"),
+                     f"{g['n']} of {total}<div style='margin-top:.2rem'>{miss_html}</div>", _dates_cell(g, y)])
+    st.html("<div class='px-dlg'><h3 style='margin:.9rem 0 .2rem 0'>Kept by many churches</h3>"
+            + table(["Feast or fast", "Kind", "Churches", f"Dates in {y}"], rows) + "</div>")
+    st.caption("Counts follow the app's tables, which list the major feasts only. 'Not listed' can be a gap in those "
+               "tables rather than a difference in practice: for example, the Ethiopian and Eritrean churches do keep "
+               "Holy Thursday. First-attestation notes come from the Early Church research of 16 November 2026, except "
+               "that the Nativity and Theophany notes were split from one combined entry and the Nativity note adds an "
+               "unverified citation (Chronograph of 354), and the Wednesday/Friday note cites Didache 8.1 (added for "
+               "this app).")
+
+
+def render_apostles(ctx):
+    cur = ctx["trad_key"]
+    groups = sects.by_apostle()
+    st.html("<div class='px-muted'>Each church appears once, under its <b>principal</b> founding apostle. "
+            "<span class='px-obs'>claimed</span> = the church itself claims that apostle's foundation; "
+            "<span class='px-prov'>via mother church</span> = it inherits the claim from the church it descends from. "
+            "These are traditions of origin, not historical findings.</div>")
+    for name, desc in sects.APOSTLE_ORDER:
+        ms = groups.get(name, [])
+        if not ms:
+            continue
+        rows = []
+        for t in ms:
+            basis = ("<span class='px-obs'>claimed</span>" if t["apostle_basis"] == "claimed"
+                     else "<span class='px-prov'>via mother church</span>")
+            nm = E(t["name_en"]) + (" <span class='px-muted'>(selected)</span>" if t["key"] == cur else "")
+            rows.append([nm, E(t.get("see", "")), basis, f"<span class='px-muted'>{E(t['apostle_note'])}</span>"])
+        st.html(f"<div class='px-dlg'><h3 style='margin:.8rem 0 .1rem 0'>{E(name)} <span class='px-muted' style='font-size:.8em'>· "
+                f"{len(ms)} {'church' if len(ms) == 1 else 'churches'}</span></h3><div class='px-muted'>{E(desc)}</div>"
+                + table(["Church", "See", "Basis", "Note"], rows) + "</div>")
+
+
+@st.dialog("What all the churches share", width="large")
+def dialog_common(ctx):
+    render_common(ctx)
+
+
+@st.dialog("Churches by founding apostle", width="large")
+def dialog_apostles(ctx):
+    render_apostles(ctx)
