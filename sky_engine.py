@@ -10,9 +10,10 @@ Adapted from the Sky Luach / Sky Taqwim sky_engine.py (same load() contract):
 * sunrise / sunset / twilight for any place
 
 Ephemeris search order: ./ephem/ (next to this file), then the folder named by the
-environment variable SKY_EPHEM_DIR; de440.bsp (1550-2650) is preferred over de440s.bsp
-(1849-12-26 .. 2150-01-22) when present. If neither is found, de440s.bsp is downloaded
-from JPL into ./ephem/.
+environment variable SKY_EPHEM_DIR, then (desktop copy only) %LOCALAPPDATA%\\SkyPaschalion\\ephem;
+de440.bsp (1550-2650) is preferred over de440s.bsp (1849-12-26 .. 2150-01-22) when present.
+If neither is found, de440s.bsp is downloaded from JPL: on the desktop copy into
+%LOCALAPPDATA%\\SkyPaschalion\\ephem (never into the program folder), otherwise into ./ephem/.
 """
 from __future__ import annotations
 
@@ -37,11 +38,22 @@ class EphemerisMissing(RuntimeError):
     pass
 
 
+def _desktop_ephem_dir() -> str | None:
+    """%LOCALAPPDATA%\\SkyPaschalion\\ephem on the Windows desktop copy (set up by tools/launch.py), else None."""
+    if os.environ.get("SKYPASCHALION_DESKTOP") != "1":
+        return None
+    base = os.environ.get("LOCALAPPDATA") or os.path.join(os.path.expanduser("~"), "AppData", "Local")
+    return os.path.join(base, "SkyPaschalion", "ephem")
+
+
 def _search_dirs() -> list[str]:
     dirs = [EPHEM_DIR]
     env = os.environ.get("SKY_EPHEM_DIR")
     if env:
         dirs.append(env)
+    desk = _desktop_ephem_dir()
+    if desk:
+        dirs.append(desk)
     return dirs
 
 
@@ -53,8 +65,9 @@ def load():
             if os.path.exists(os.path.join(d, name)):
                 loader = Loader(d, verbose=False)
                 return loader.timescale(builtin=True), loader(name), name
-    os.makedirs(EPHEM_DIR, exist_ok=True)
-    loader = Loader(EPHEM_DIR, verbose=False)
+    target = _desktop_ephem_dir() or EPHEM_DIR   # the desktop copy never writes into its program folder
+    os.makedirs(target, exist_ok=True)
+    loader = Loader(target, verbose=False)
     ts = loader.timescale(builtin=True)
     try:
         url = "https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de440s.bsp"

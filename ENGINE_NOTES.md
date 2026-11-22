@@ -2,7 +2,7 @@
 
 Flat modules: `calendars.py`, `paschalion.py`, `sky_layer.py`, `sky_engine.py`; tests in `tests/test_engine.py`; validation in `tools/validate.py` → `tools/validation_results.json` and `VALIDATION.md`. They need Python 3.12, skyfield, numpy and tzdata (Windows). The validation script also needs python-dateutil, convertdate and ethiopian-date.
 
-Ephemeris: `sky_engine.load()` looks in `./ephem/` (next to the modules), then in `$SKY_EPHEM_DIR`. It prefers de440.bsp to de440s.bsp. If neither is present it downloads de440s.bsp from JPL into `./ephem/`. The pattern is the Sky Luach / Sky Taqwim one, with the SKY_EPHEM_DIR step added.
+Ephemeris: `sky_engine.load()` looks in `./ephem/` (next to the modules), then in `$SKY_EPHEM_DIR`. It prefers de440.bsp to de440s.bsp. If neither is present it downloads de440s.bsp from JPL into `./ephem/` (on the Windows desktop copy, where tools/launch.py sets SKYPASCHALION_DESKTOP=1, into `%LOCALAPPDATA%\SkyPaschalion\ephem` instead, which is also searched; the desktop copy never writes into its program folder). The pattern is the Sky Luach / Sky Taqwim one, with the SKY_EPHEM_DIR step added.
 
 ## Calendar rules (calendars.py)
 - Every conversion goes through the integer JDN. `jdn_of(date) = date.toordinal() + 1721425`. Years are astronomical (0 = 1 BC).

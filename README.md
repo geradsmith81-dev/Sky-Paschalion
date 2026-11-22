@@ -11,15 +11,20 @@ Sources: [SOURCES.md](SOURCES.md).
 
 1. Install Python 3.12 or newer from https://www.python.org/downloads/ and tick **Add python.exe to PATH**.
 2. Unzip `SkyPaschalion_desktop.zip` to a folder of your choice (for example `C:\SkyPaschalionApp`).
-3. Double-click **Start app.bat**. The first start creates a private Python environment in the folder (`.venv`)
-   and installs the app's components; it needs the internet and takes 2–5 minutes. The app then opens in its own
-   Microsoft Edge window at **http://localhost:8514** (port 8514, so it can run next to Sky Luach 8505,
-   Sky Taqwim 8512 and Sky Gahshomar 8513). Keep the black window open while you use the app; close it to stop.
-4. Double-click **Create desktop icon.bat** once to put a **Sky Paschalion** icon on the Desktop and in the Start
-   menu.
+3. Double-click **Start app.bat**. The first start opens a setup window that creates a private Python environment
+   in the folder (`.venv`) and installs the exact, checksum-verified components listed in `requirements.txt`; it
+   needs the internet and takes 2–5 minutes, and puts a **Sky Paschalion** icon on the Desktop and in the Start
+   menu (if it is missing, double-click **Create desktop icon.bat**). The app then opens in its own Microsoft Edge
+   window at **http://localhost:8514** (port 8514, so it can run next to Sky Luach 8505, Sky Taqwim 8511 and
+   Sky Gahshomar 8513). There is no console window: close the app window and the app stops about a minute and a
+   half later, or press **Quit Sky Paschalion** at the bottom of the page.
+4. To open this computer's copy on a phone or another computer on the same network, double-click
+   **Share on this network.bat**; its window shows the address and a new password each time. See
+   `READ ME FIRST.txt` for details, where the app keeps its logs (`%LOCALAPPDATA%\SkyPaschalion`) and how to check
+   a download against `SHA256SUMS.txt`.
 
-After an update of the app (a new `requirements.txt`), Start app.bat installs the changed components by itself;
-if the computer is offline it starts with the components it has and tries again next time. The desktop bundle
+After an update of the app (a new `requirements.txt`), Start app.bat installs the changed components by itself in
+the setup window. The desktop bundle
 includes the JPL ephemeris (`ephem/de440s.bsp`), so the app works offline after the first setup.
 
 ## On the web and on phones (GitHub + Streamlit Community Cloud)
@@ -53,7 +58,7 @@ the first time it starts).
 | `sects.py`, `feasts.py`, `names.py` | The churches, their feasts and fasts, and the names in the liturgical languages. |
 | `theme.py`, `ornaments.py`, `assets/` | Colours, fonts (OFL), the Chi-Rho emblem, crosses and mosaic bands. |
 | `orient_live.py`, `locator.py`, `device.py`, `places.py` | The live compass, the device location, the phone layout and the place search. |
-| `tools/` | `apptest_sweep.py` (headless test of every page), `js_check.py` (compass JavaScript), `render_previews.py`, `validate.py` (engine validation), `make_shortcut.ps1`. |
+| `tools/` | `apptest_sweep.py` (headless test of every page), `js_check.py` (compass JavaScript), `render_previews.py`, `validate.py` (engine validation); in the Windows desktop bundle also `launch.py` (the windowless launcher). |
 | `tests/` | Unit tests of the engine and the content (`tests/_stub` is used by the content tests only). |
 
 ## Tests
@@ -68,3 +73,25 @@ Sky Paschalion is released under the MIT License — Copyright (c) 2026 Gerad Sm
 The bundled fonts (SIL Open Font License 1.1), the JPL ephemeris and the World Magnetic Model (US government
 works), GeoNames place data (CC BY 4.0) and the other third-party material keep their own licences: see
 [THIRD_PARTY.md](THIRD_PARTY.md).
+
+## Run locally
+
+Install the exact, checksum-verified versions the app was tested with (Python 3.12 or newer):
+
+```
+python -m venv .venv
+.venv\Scripts\python -m pip install --require-hashes --only-binary ":all:" -r requirements.txt
+.venv\Scripts\python -m streamlit run app.py --server.address 127.0.0.1
+```
+
+`requirements.in` lists the direct components; `requirements.txt` is the full lock with SHA-256
+hashes (generated with `uv pip compile requirements.in --universal --python-version 3.12
+--generate-hashes --only-binary :all:`). The same lock serves Streamlit Community Cloud.
+
+## Security and privacy
+
+- The Windows desktop copy of Sky Paschalion listens on this computer only (127.0.0.1). "Share on this network.bat" can open it to the local network, protected by a new password each time; only the person at the computer sees the Quit button.
+- The desktop copy keeps its data and logs in `%LOCALAPPDATA%\SkyPaschalion`, checks its program files against `MANIFEST.sha256` at every start, and each release publishes SHA-256 checksums of its zips in `SHA256SUMS.txt`.
+- All components are pinned to exact versions and installed with `--require-hashes`.
+- The desktop-only code (`desktop.py`) does nothing on a hosted copy: no Quit button is shown there.
+- Sky Paschalion stores nothing about you: your place and settings live only in the open browser session. The desktop copy downloads the JPL ephemeris to `%LOCALAPPDATA%\SkyPaschalion\ephem` only if the bundled copy is missing.

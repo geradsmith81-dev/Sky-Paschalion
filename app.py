@@ -17,6 +17,10 @@ st.set_page_config(page_title="Sky Paschalion · Πασχάλιον",
                    page_icon=os.path.join(HERE, "assets", "icons", "favicon-32.png"),
                    layout="wide", initial_sidebar_state="auto")
 
+import desktop as dk  # noqa: E402  (desktop-only controls; inert on the hosted copy)
+
+dk.require_password(st)
+
 from zoneinfo import ZoneInfo  # noqa: E402
 
 import calendars as cal  # noqa: E402
@@ -90,10 +94,18 @@ else:
 
 # ---------------------------------------------------------------------------------------------- where the user is
 def _browser_tz():
+    """The browser's time zone name, or None when it is missing or not a known IANA zone (it comes from the browser)."""
     try:
-        return st.context.timezone
+        tz = st.context.timezone
     except Exception:
         return None
+    if not isinstance(tz, str) or not tz or len(tz) > 64:
+        return None
+    try:
+        ZoneInfo(tz)
+    except Exception:
+        return None
+    return tz
 
 
 if "place" not in st.session_state:
@@ -238,3 +250,6 @@ st.html("<div class='px-meander' role='presentation' style='margin-top:1.2rem'><
         "<div class='px-muted' style='font-size:.8rem'>Astronomy: NASA JPL DE440s via Skyfield. Dates follow each "
         "church's published rules as recorded in the app's sources; local custom may differ. "
         "Follow your parish or diocese for the days you keep.</div>")
+
+# desktop copy only: Quit (and the data-folder note) for the person at this computer; nothing on the hosted copy
+dk.desktop_controls(st)
