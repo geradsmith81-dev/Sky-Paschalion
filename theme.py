@@ -400,7 +400,7 @@ h1, h2, h3, h4, h5, h6, [data-testid="stHeading"] * {{ color: {GOLD} !important;
 [data-testid="stNumberInputContainer"], [data-testid="stDateInput"] [data-baseweb="input"] {{
   background-color: {CARD} !important; border-color: rgba(232,194,92,.55) !important; color: {TEXT} !important; }}
 [data-baseweb="input"] input, [data-baseweb="base-input"] input, textarea, [data-baseweb="select"] input,
-[data-baseweb="select"] div, [data-baseweb="select"] span {{ color: {TEXT} !important; -webkit-text-fill-color: {TEXT}; background-color: transparent; }}
+[data-baseweb="select"] div, [data-baseweb="select"] span {{ color: {TEXT} !important; -webkit-text-fill-color: {TEXT} !important; background-color: transparent; }}
 input::placeholder, textarea::placeholder {{ color: {MUTED} !important; -webkit-text-fill-color: {MUTED}; opacity: 1; }}
 [data-baseweb="select"] svg, [data-testid="stNumberInputContainer"] svg {{ color: {TEXT} !important; fill: currentColor; }}
 [data-testid="stNumberInputStepDown"], [data-testid="stNumberInputStepUp"] {{ background: {CARD} !important; color: {TEXT} !important; }}
@@ -446,6 +446,18 @@ input::placeholder, textarea::placeholder {{ color: {MUTED} !important; -webkit-
 [data-testid="stToast"] {{ background-color: {CARD} !important; color: {TEXT} !important; }}
 [data-testid="stPopoverBody"] {{ background-color: {CARD} !important; color: {TEXT} !important; }}
 hr {{ border-color: rgba(232,194,92,.35) !important; }}
+/* st.dialog windows (summary links): the box takes Streamlit's theme background, white in light mode, so pin it dark */
+[data-testid="stDialog"] div:has(> [role="dialog"]), [data-testid="stDialog"] [role="dialog"] {{
+  background-color: {CARD} !important; color: {TEXT} !important; }}
+[data-testid="stDialog"] div:has(> [role="dialog"]) {{ border: 1px solid {GOLD} !important; }}
+[data-testid="stDialog"] [role="dialog"] h2, [data-testid="stDialog"] [role="dialog"] h2 * {{ color: {GOLD} !important; }}
+[data-testid="stDialog"] [role="dialog"] p, [data-testid="stDialog"] [role="dialog"] label,
+[data-testid="stDialog"] [role="dialog"] [data-testid="stWidgetLabel"] * {{ color: {TEXT} !important; }}
+[data-testid="stDialog"] button[aria-label="Close"], [data-testid="stDialog"] button[aria-label="Close"] svg {{
+  color: {TEXT} !important; fill: currentColor; stroke: currentColor; }}
+[data-testid="stDialog"] input {{ color: {TEXT} !important; -webkit-text-fill-color: {TEXT} !important;
+  background-color: transparent !important; }}
+[data-testid="stDialog"] .px-scroll {{ background-color: {BG}; }}
 </style>
 """
 
