@@ -160,6 +160,19 @@ def test_common_groups_use_known_keys():
     assert sm["pascha"]["n"] == len(sects.TRADITIONS)
     assert {(d.month, d.day): len(v) for d, v in sm["nativity"]["dates"]}.get((12, 25)) == 32
 
+def test_saints_data_valid_and_dated():
+    import saints
+    assert saints.SAINTS and saints.DAYS, "no saints data"
+    errs = saints.validate()
+    assert not errs, errs[:10]
+    # every commemoration has a date for every church it applies to, in each of three years
+    for t in sects.TRADITIONS:
+        ents = saints.entries_for(t)
+        for gy in (2025, 2026, 2027):
+            got = {k for _, k, _ in saints.for_year(t, gy)}
+            missing = {e["key"] for e in ents} - got
+            assert not missing, (t["key"], gy, sorted(missing)[:5])
+
 if __name__ == "__main__":
     import inspect
     fails = 0

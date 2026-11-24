@@ -18,6 +18,7 @@ from functools import lru_cache
 
 import calendars as cal
 import feasts
+import saints
 import names
 import paschalion
 import sects
@@ -203,6 +204,23 @@ def _trim_fasts(periods, trad_key, display_cal, rule, gy, ev):
         elif e in feast_days and e > s:
             e = e - timedelta(days=1)
         out.append((s, e, key))
+    return out
+
+
+@lru_cache(maxsize=512)
+def saint_events(trad_key: str, display_cal: str, rule: str, gy: int):
+    """Saints' days (date, saint key, rank) in Gregorian year gy, with the calendar/Paschalion overrides applied."""
+    t = effective(trad_key, display_cal, rule)
+    try:
+        return tuple(saints.for_year(t, gy))
+    except paschalion.OutsideEphemeris:
+        return tuple(saints.for_year(dict(t, paschalion="western"), gy))
+
+
+def saints_between(trad_key, display_cal, rule, d0: date, d1: date):
+    out = []
+    for gy in range(d0.year, d1.year + 1):
+        out += [x for x in saint_events(trad_key, display_cal, rule, gy) if d0 <= x[0] <= d1]
     return out
 
 

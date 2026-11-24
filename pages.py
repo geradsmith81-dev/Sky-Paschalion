@@ -21,6 +21,7 @@ import names
 import ornaments as orn
 import orient_live
 import paschalion
+import saints
 import sects
 import sky_engine
 import sky_layer
@@ -77,12 +78,15 @@ def _entry_for(info, key: str):
 
 
 def explain_pop(key, inner: str, info=None, pop: str = "inline", text: str | None = None,
-                rank: str | None = None) -> str:
+                rank: str | None = None, title: str | None = None, foot_html: str | None = None) -> str:
     """Wrap a feast/fast name (chip or plain) in a click-to-open explanation. pop: inline | float | float_r."""
     body = text if text is not None else explain.text(key) if key else None
     if not body:
         return inner
-    title = E(names.NAMES.get(key, {}).get("en", key.replace("_", " "))) if key else "Wednesday and Friday fast"
+    if title is None:
+        title = E(names.NAMES.get(key, {}).get("en", key.replace("_", " "))) if key else "Wednesday and Friday fast"
+    else:
+        title = E(title)
     meta = []
     if rank:
         meta.append(E(rank_label(rank)))
@@ -92,6 +96,8 @@ def explain_pop(key, inner: str, info=None, pop: str = "inline", text: str | Non
         if rt:
             meta.append(E(rt) if ("month" in ent[0] or "base" in ent[0]) else rt)
     foot = f"<div class='px-pop-src'>{' · '.join(meta)}</div>" if meta else ""
+    if foot_html is not None:
+        foot = foot_html
     cls = {"inline": "px-pop px-pop-inline", "float": "px-pop", "float_r": "px-pop px-pop-r"}.get(pop, "px-pop px-pop-inline")
     return (f"<details class='{cls}'><summary title='Click for an explanation'>{inner}</summary>"
             f"<div class='px-popbody'><div class='px-pop-title'>{title}</div>{E(body)}{foot}</div></details>")
@@ -107,6 +113,38 @@ def chip_for(key: str, rank: str, kind: str, lang: str, variant=None, info=None,
 
 def plain_chip(kind: str, text: str) -> str:
     return f"<span class='px-chip' style='background:{theme.CHIP[kind]}'>{E(text)}</span>"
+
+
+# ------------------------------------------------------------------ saints' days
+def _month_name(cc: str, m: int) -> str:
+    mc = "julian" if cc in ("byzantine", "revised_julian", "gregorian", "julian") else cc
+    return names.MONTHS[mc]["en"][m - 1]
+
+
+def _saint_rules(key: str, info) -> list[str]:
+    if not info:
+        return []
+    eff = L.effective(*info)
+    return [saints.rule_text(e, eff, _month_name) for e in saints.entries_for(eff) if e["key"] == key]
+
+
+def saint_chip(key: str, rank: str, info=None, pop: str = "inline") -> str:
+    nm = E(saints.name(key))
+    style = f"background:{theme.CHIP['saint']}" + (";font-weight:700" if rank == "major" else ";font-weight:500")
+    chip = f"<span class='px-chip px-saint' title='{E(saints.RANKS.get(rank, rank))}' style='{style}'>{nm}</span>"
+    meta = [E(saints.RANKS.get(rank, rank))] + [E(x) for x in _saint_rules(key, info)]
+    srcs = saints.SAINTS.get(key, {}).get("sources", [])[:3]
+    links = " ".join(f"<a href='{E(u)}' target='_blank' rel='noopener'>[{i + 1}]</a>" for i, u in enumerate(srcs))
+    foot = f"<div class='px-pop-src'>{' · '.join(meta)}{(' · ' + links) if links else ''}</div>"
+    return explain_pop(key, chip, None, pop, text=saints.text(key) or "", title=saints.name(key), foot_html=foot)
+
+
+def saint_chips(ctx, d: date, pop: str = "inline") -> str:
+    if not ctx.get("show_saints", True):
+        return ""
+    k, c, r = ctx["trad_key"], ctx["cal"], ctx["rule"]
+    return "".join(saint_chip(key, rank, (k, c, r), pop) for dd, key, rank in L.saints_between(k, c, r, d, d)
+                   if dd == d)
 
 
 def day_chips(ctx, d: date, events=None, with_periods=True, with_weekly=True, pop: str = "inline") -> str:
@@ -125,6 +163,7 @@ def day_chips(ctx, d: date, events=None, with_periods=True, with_weekly=True, po
     if with_weekly and L.is_weekly_fast(k, c, r, d):
         out.append(explain_pop(None, plain_chip("fast", "Fast day (" + ("Friday" if d.weekday() == 4 else "Wednesday") + ")"),
                                None, pop, text=explain.WEEKLY))
+    out.append(saint_chips(ctx, d, pop))
     return "".join(out)
 
 
@@ -350,7 +389,7 @@ def render_month(ctx):
             cells.append("<td class='px-empty'></td>")
         trs = "".join("<tr>" + "".join(cells[i:i + 7]) + "</tr>" for i in range(0, len(cells), 7))
         st.html(f"<table class='px-grid'><thead><tr>{head}</tr></thead><tbody>{trs}</tbody></table>")
-    st.html(theme.legend(["pascha", "great_feast", "feast", "commemoration", "fast", "strict_fast", "movable"]))
+    st.html(theme.legend(["pascha", "great_feast", "feast", "commemoration", "fast", "strict_fast", "movable", "saint"]))
 
 
 # ============================================================================== Year
@@ -398,6 +437,19 @@ def render_year(ctx):
     st.caption(f"Besides these, {len(wf)} Wednesdays and Fridays in this year are kept as fast days "
                f"({'Fridays only, Latin practice' if ctx['trad'].get('rite') == 'latin' else 'Wednesdays and Fridays'}; "
                "fast-free weeks and great feasts excluded; simplified, no fish/oil gradations).")
+
+    if ctx.get("show_saints", True):
+        st.subheader("Saints' days")
+        sv = sorted({x for gy in range(s.year, e.year + 1) for x in L.saint_events(k, c, r, gy) if s <= x[0] <= e})
+        if sv:
+            st.html(table(["Date (" + E(cal.NAME[c]) + ")", "Civil date", "Saint", "Rank"],
+                          [[L.date_html(c, dd, lg), E(L.civil(dd)), saint_chip(key, rank, (k, c, r)),
+                            E(saints.RANKS.get(rank, rank))] for dd, key, rank in sv],
+                          ["px-today-row" if dd == d0 else "" for dd, _, _ in sv]))
+            st.caption("Click a saint's name for a short summary. Major saints only, not the full daily calendar; "
+                       "sources and limits are on the About page.")
+        else:
+            st.caption("No saints' days are recorded for this church in the app's tables.")
 
     st.subheader("The movable cycle (from Pascha)")
     ps = [gy for gy in range(s.year, e.year + 1) if (L.pascha(gy, r) is not None and s <= L.pascha(gy, r) <= e)]
@@ -466,6 +518,28 @@ def render_feasts(ctx):
                          (L.date_html(c, dd, lg, weekday=False) if dd else "<span class='px-muted'>not this year</span>"),
                          src + (f"<div class='px-muted'>{E(e['note'])}</div>" if e.get("note") and "month" in e else "")])
     st.html(table(["Feast or fast", "Kind", "Rule", "Rank", f"Date in {gy}", "Sources"], rows))
+    ents = saints.entries_for(eff)
+    if ents:
+        st.subheader("Saints' days")
+        sdates = {}
+        for dd, key, rank in L.saint_events(k, c, r, gy):
+            sdates.setdefault(key, []).append(dd)
+        srows = []
+        for en in sorted(ents, key=lambda x: saints.name(x["key"])):
+            key = en["key"]
+            ds = [d for d in saints.dates_for(en, eff, gy)]
+            src = " ".join(f"<a href='{E(u)}' target='_blank' rel='noopener'>[{i + 1}]</a>"
+                           for i, u in enumerate(en.get("sources") or saints.SAINTS.get(key, {}).get("sources", [])))
+            srows.append([saint_chip(key, en.get("rank", "saint"), (k, c, r)),
+                          E(saints.RANKS.get(en.get("rank", "saint"))),
+                          E(saints.rule_text(en, eff, _month_name)),
+                          ", ".join(L.date_html(c, d, lg, weekday=False) for d in ds) or
+                          "<span class='px-muted'>not this year</span>",
+                          src + (f"<div class='px-muted'>{E(en['note'])}</div>" if en.get("note") else "")])
+        st.html(f"<div class='px-muted'>{len(ents)} commemorations of saints that this church keeps in the app's "
+                f"tables (major saints only, not the full daily calendar).</div>"
+                + table(["Saint", "Rank", "Rule", f"Date in {gy}", "Sources"], srows))
+        st.caption("Click a saint's name for a short summary.")
 
 
 # ============================================================================== Paschalion
@@ -718,6 +792,8 @@ def render_about(ctx):
     st.subheader("Sources")
     with st.expander("Traditions, feasts and names (SOURCES.md)"):
         st.markdown(_md("SOURCES.md"))
+    with st.expander("Saints' days: sources, coverage and limits (SAINTS.md)"):
+        st.markdown(_md("SAINTS.md"))
     try:
         _, _, fname = sky_engine.load()
         eph = os.path.basename(str(fname))

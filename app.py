@@ -1,7 +1,7 @@
 """Sky Paschalion · Πασχάλιον — the Christian calendars of the apostolic churches, with Pascha and the sky
 from NASA JPL astronomy.
 
-Run:  streamlit run app.py      (desktop: double-click "Start app.bat", port 8514)
+Run:  streamlit run app.py      (desktop: double-click "Start app.pyw", port 8514)
 """
 import os
 import sys
@@ -177,6 +177,8 @@ with panel:
     lang = st.selectbox("Display language", trad["liturgical_languages"], key="lang", format_func=L.lang_label,
                         help="Names are shown as 'English · liturgical language'.")
     hours = st.selectbox("Hours of prayer", L.HOURS_OPTIONS, key="hours", format_func=lambda k: L.HOURS_NAME[k])
+    show_saints = st.toggle("Show saints' days", value=True, key="show_saints",
+                            help="Major saints of the chosen church on the calendar pages; click a name for a short summary.")
     _p = sects.preset(trad["key"])
     _diff = [n for n, a, b in (("calendar", cal_key, _p["fixed_calendar"]), ("Paschalion", rule, _p["paschalion"]),
                                ("hours", hours, _p["hours_system"])) if a != b]
@@ -233,6 +235,7 @@ ctx = {
     "trad": trad, "trad_key": trad["key"], "cal": cal_key, "rule": rule, "lang": lang, "hours": hours,
     "variant": trad.get("syriac_script"), "phone": phone,
     "feast_cal": L.feast_calendar(trad, cal_key), "apply_preset": apply_preset,
+    "show_saints": show_saints,
 }
 
 # ---------------------------------------------------------------------------------------------- summary links

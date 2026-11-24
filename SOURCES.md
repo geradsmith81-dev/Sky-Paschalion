@@ -125,3 +125,10 @@ Two links under the page menu open summary windows.
   listed once, under its principal apostle, marked as 'claimed' or 'via mother church', as decided on
   16 November 2026 and copied from the same `early_church_meta.json`. These are traditions of origin, not
   historical findings.
+
+## Saints' days (24 November 2026)
+
+`saints.py` computes the dates and `saints_data.py` holds 281 saints and 444 commemorations for the 55 churches.
+Each is shown as a clickable chip that opens a short summary. Sources, coverage per church and every omission
+are in [SAINTS.md](SAINTS.md); each saint's own sources are linked in its pop-up and on the Feasts & fasts page.
+

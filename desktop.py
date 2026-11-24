@@ -75,7 +75,7 @@ def require_password(st):
     if not pw or client_is_local(st) or st.session_state.get('_dk_auth'):
         return
     st.markdown('### Sky Paschalion is shared from another computer')
-    st.write('Enter the password shown in the Sky Paschalion window on that computer.')
+    st.write('Enter the password shown in the sharing window on that computer.')
     with st.form('dk_pw', clear_on_submit=True):
         given = st.text_input('Password', type='password')
         ok = st.form_submit_button('Open Sky Paschalion')
@@ -224,7 +224,7 @@ def desktop_controls(st, on_cleared=None):
                 st.success(f'Removed {n:,} stored files ({b / 1e6:,.1f} MB).')
         st.caption(f"Sky Paschalion's data folder on this computer: {data_dir()}")
         if is_sharing():
-            st.caption('Sky Paschalion is shared on this network. Close the Sky Paschalion window with the password '
+            st.caption('Sky Paschalion is shared on this network. Close the sharing window (the one with the password) '
                        'to stop sharing.')
         if st.button('Quit Sky Paschalion', key='dk_quit', type='primary'):
             st.info('Sky Paschalion has stopped. You can close this window.')

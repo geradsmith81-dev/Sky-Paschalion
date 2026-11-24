@@ -71,11 +71,12 @@ OBS_BG = "#16331f"
 CHIP = {
     "pascha": "#f7e7b0", "great_feast": "#efcd6e", "feast": "#f2dfa6", "commemoration": "#bcd3f2",
     "fast": "#d9c6e6", "strict_fast": "#c9b3dc", "fast_free": "#b9e1da", "movable": "#c7e3c0", "civil": "#e9e0c9",
+    "saint": "#ecc9b0",
 }
 KIND_LABEL = {
     "pascha": "Pascha (Easter)", "great_feast": "Great feast", "feast": "Feast", "commemoration": "Commemoration",
     "fast": "Fast", "strict_fast": "Strict fast", "fast_free": "Fast-free", "movable": "Movable (from Pascha)",
-    "civil": "Civil date",
+    "civil": "Civil date", "saint": "Saint's day",
 }
 
 # ---------------------------------------------------------------- fonts

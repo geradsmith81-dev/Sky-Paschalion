@@ -41,6 +41,12 @@ def build_cases() -> list[dict]:
                    ("Feasts", "ethiopian_orthodox"), ("Compare", "armenian_etchmiadzin")):
         add(f"link/common/{pg}/{tk}", pg, tk, click="lnk_common", checks=["Kept by all 55 churches"])
         add(f"link/apostles/{pg}/{tk}", pg, tk, click="lnk_apostles", checks=["via mother church"])
+    # 1c. saints' days (24 Nov 2026): the Year and Feasts tables, one church per rite, and the settings toggle
+    for tk in ("latin_catholic", "russian_orthodox", "church_of_greece", "coptic_orthodox", "ethiopian_orthodox",
+               "armenian_etchmiadzin", "maronite", "syro_malabar_catholic"):
+        add(f"saints/year/{tk}", "Year", tk, checks=["Click a saint's name for a short summary"])
+        add(f"saints/feasts/{tk}", "Feasts", tk, checks=["commemorations of saints"])
+    add("saints/off/year", "Year", "latin_catholic", state={"show_saints": False})
     # 2. every page with the default and with an Eastern, Oriental and East Syriac church
     pages = ["Today", "Month", "Year", "Feasts", "Paschalion", "Hours", "Compare", "Traditions", "How", "About"]
     for pg in pages:

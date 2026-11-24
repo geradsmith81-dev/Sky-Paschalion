@@ -1,11 +1,11 @@
 {
  "summary": {
-  "runs": 285,
+  "runs": 302,
   "with_exceptions": 0,
   "exceptions": 0,
   "failed_checks": 0,
-  "checks": 49,
-  "seconds": 159.0
+  "checks": 65,
+  "seconds": 164.5
  },
  "results": [
   {
@@ -13,28 +13,28 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.17
+   "sec": 1.12
   },
   {
    "name": "today/ukrainian_greek_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.48
   },
   {
    "name": "today/ruthenian_greek_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.38
   },
   {
    "name": "today/romanian_greek_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.37
   },
   {
    "name": "today/melkite_greek_catholic",
@@ -55,28 +55,28 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "today/italo_albanian_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.37
   },
   {
    "name": "today/greek_byzantine_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "today/bulgarian_greek_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "today/macedonian_greek_catholic",
@@ -97,91 +97,91 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.13
+   "sec": 1.2
   },
   {
    "name": "today/russian_greek_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.39
   },
   {
    "name": "today/albanian_greek_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.37
   },
   {
    "name": "today/maronite",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.43
+   "sec": 0.38
   },
   {
    "name": "today/syriac_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "today/syro_malankara_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.37
   },
   {
    "name": "today/chaldean_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.38
   },
   {
    "name": "today/syro_malabar_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.37
   },
   {
    "name": "today/armenian_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.37
   },
   {
    "name": "today/coptic_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.37
   },
   {
    "name": "today/ethiopian_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.38
   },
   {
    "name": "today/eritrean_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.39
   },
   {
    "name": "today/constantinople",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.13
+   "sec": 1.22
   },
   {
    "name": "today/mount_athos",
@@ -195,126 +195,126 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.38
   },
   {
    "name": "today/antioch_greek_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.43
+   "sec": 0.37
   },
   {
    "name": "today/jerusalem_greek_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.44
+   "sec": 0.38
   },
   {
    "name": "today/russian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.43
+   "sec": 0.37
   },
   {
    "name": "today/serbian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.38
   },
   {
    "name": "today/romanian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.37
   },
   {
    "name": "today/bulgarian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.38
   },
   {
    "name": "today/georgian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.37
   },
   {
    "name": "today/cypriot_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.37
   },
   {
    "name": "today/church_of_greece",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.42
+   "sec": 0.39
   },
   {
    "name": "today/polish_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.18
+   "sec": 1.19
   },
   {
    "name": "today/albanian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.38
   },
   {
    "name": "today/czech_slovak_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.38
   },
   {
    "name": "today/orthodox_church_in_america",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.38
   },
   {
    "name": "today/orthodox_church_of_ukraine",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.39
   },
   {
    "name": "today/finnish_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.39
   },
   {
    "name": "today/old_calendarists",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "today/coptic_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.39
   },
   {
    "name": "today/syriac_orthodox",
@@ -349,7 +349,7 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.15
+   "sec": 1.17
   },
   {
    "name": "today/armenian_jerusalem",
@@ -363,7 +363,7 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.4
   },
   {
    "name": "today/ethiopian_orthodox",
@@ -384,63 +384,63 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.47
   },
   {
    "name": "today/ancient_church_of_the_east",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "link/common/Today/latin_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.52
+   "sec": 0.51
   },
   {
    "name": "link/apostles/Today/latin_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.49
+   "sec": 0.47
   },
   {
    "name": "link/common/Month/coptic_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.37
+   "sec": 0.35
   },
   {
    "name": "link/apostles/Month/coptic_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "link/common/Year/russian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.38
+   "sec": 0.4
   },
   {
    "name": "link/apostles/Year/russian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.92
+   "sec": 0.94
   },
   {
    "name": "link/common/Feasts/ethiopian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.42
+   "sec": 0.43
   },
   {
    "name": "link/apostles/Feasts/ethiopian_orthodox",
@@ -454,70 +454,189 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "link/apostles/Compare/armenian_etchmiadzin",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.38
+   "sec": 0.35
   },
   {
-   "name": "page/Today/latin_catholic",
-   "exceptions": [],
-   "failed_checks": [],
-   "errors": [],
-   "sec": 0.58
-  },
-  {
-   "name": "page/Today/russian_orthodox",
-   "exceptions": [],
-   "failed_checks": [],
-   "errors": [],
-   "sec": 0.4
-  },
-  {
-   "name": "page/Today/coptic_orthodox",
-   "exceptions": [],
-   "failed_checks": [],
-   "errors": [],
-   "sec": 0.39
-  },
-  {
-   "name": "page/Today/assyrian_church_of_the_east",
-   "exceptions": [],
-   "failed_checks": [],
-   "errors": [],
-   "sec": 0.39
-  },
-  {
-   "name": "page/Month/latin_catholic",
-   "exceptions": [],
-   "failed_checks": [],
-   "errors": [],
-   "sec": 0.33
-  },
-  {
-   "name": "page/Month/russian_orthodox",
-   "exceptions": [],
-   "failed_checks": [],
-   "errors": [],
-   "sec": 0.33
-  },
-  {
-   "name": "page/Month/coptic_orthodox",
+   "name": "saints/year/latin_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
    "sec": 0.35
   },
   {
+   "name": "saints/feasts/latin_catholic",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.35
+  },
+  {
+   "name": "saints/year/russian_orthodox",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.34
+  },
+  {
+   "name": "saints/feasts/russian_orthodox",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.36
+  },
+  {
+   "name": "saints/year/church_of_greece",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.34
+  },
+  {
+   "name": "saints/feasts/church_of_greece",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.34
+  },
+  {
+   "name": "saints/year/coptic_orthodox",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.34
+  },
+  {
+   "name": "saints/feasts/coptic_orthodox",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.88
+  },
+  {
+   "name": "saints/year/ethiopian_orthodox",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.32
+  },
+  {
+   "name": "saints/feasts/ethiopian_orthodox",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.33
+  },
+  {
+   "name": "saints/year/armenian_etchmiadzin",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.32
+  },
+  {
+   "name": "saints/feasts/armenian_etchmiadzin",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.34
+  },
+  {
+   "name": "saints/year/maronite",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.33
+  },
+  {
+   "name": "saints/feasts/maronite",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.33
+  },
+  {
+   "name": "saints/year/syro_malabar_catholic",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.32
+  },
+  {
+   "name": "saints/feasts/syro_malabar_catholic",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.32
+  },
+  {
+   "name": "saints/off/year",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.31
+  },
+  {
+   "name": "page/Today/latin_catholic",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.56
+  },
+  {
+   "name": "page/Today/russian_orthodox",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.47
+  },
+  {
+   "name": "page/Today/coptic_orthodox",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 1.11
+  },
+  {
+   "name": "page/Today/assyrian_church_of_the_east",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.47
+  },
+  {
+   "name": "page/Month/latin_catholic",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.32
+  },
+  {
+   "name": "page/Month/russian_orthodox",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.32
+  },
+  {
+   "name": "page/Month/coptic_orthodox",
+   "exceptions": [],
+   "failed_checks": [],
+   "errors": [],
+   "sec": 0.31
+  },
+  {
    "name": "page/Month/assyrian_church_of_the_east",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.87
+   "sec": 0.32
   },
   {
    "name": "page/Year/latin_catholic",
@@ -531,42 +650,42 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.35
   },
   {
    "name": "page/Year/coptic_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.34
   },
   {
    "name": "page/Year/assyrian_church_of_the_east",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.32
   },
   {
    "name": "page/Feasts/latin_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.36
   },
   {
    "name": "page/Feasts/russian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.35
   },
   {
    "name": "page/Feasts/coptic_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.35
+   "sec": 0.9
   },
   {
    "name": "page/Feasts/assyrian_church_of_the_east",
@@ -580,28 +699,28 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 2.35
+   "sec": 2.46
   },
   {
    "name": "page/Paschalion/russian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.35
+   "sec": 0.33
   },
   {
    "name": "page/Paschalion/coptic_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.33
   },
   {
    "name": "page/Paschalion/assyrian_church_of_the_east",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 2.84
+   "sec": 0.33
   },
   {
    "name": "page/Hours/latin_catholic",
@@ -622,14 +741,14 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.33
   },
   {
    "name": "page/Hours/assyrian_church_of_the_east",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.37
+   "sec": 0.34
   },
   {
    "name": "page/Compare/latin_catholic",
@@ -643,168 +762,168 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.35
+   "sec": 0.34
   },
   {
    "name": "page/Compare/coptic_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.36
+   "sec": 0.88
   },
   {
    "name": "page/Compare/assyrian_church_of_the_east",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.35
+   "sec": 0.32
   },
   {
    "name": "page/Traditions/latin_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.38
+   "sec": 0.35
   },
   {
    "name": "page/Traditions/russian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.38
+   "sec": 0.35
   },
   {
    "name": "page/Traditions/coptic_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.35
   },
   {
    "name": "page/Traditions/assyrian_church_of_the_east",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.05
+   "sec": 0.34
   },
   {
    "name": "page/How/latin_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.37
+   "sec": 0.31
   },
   {
    "name": "page/How/russian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.36
+   "sec": 0.31
   },
   {
    "name": "page/How/coptic_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.35
+   "sec": 0.32
   },
   {
    "name": "page/How/assyrian_church_of_the_east",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.34
   },
   {
    "name": "page/About/latin_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.47
+   "sec": 0.38
   },
   {
    "name": "page/About/russian_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.38
+   "sec": 0.33
   },
   {
    "name": "page/About/coptic_orthodox",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.37
+   "sec": 0.88
   },
   {
    "name": "page/About/assyrian_church_of_the_east",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.38
+   "sec": 0.33
   },
   {
    "name": "cal/gregorian/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.36
+   "sec": 0.32
   },
   {
    "name": "cal/gregorian/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.36
+   "sec": 0.33
   },
   {
    "name": "cal/gregorian/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.59
+   "sec": 0.66
   },
   {
    "name": "cal/gregorian/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.91
+   "sec": 0.35
   },
   {
    "name": "cal/gregorian/Month/coptic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.31
   },
   {
    "name": "cal/gregorian/Month/phone",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.32
   },
   {
    "name": "cal/julian/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.33
   },
   {
    "name": "cal/julian/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.34
   },
   {
    "name": "cal/julian/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.58
+   "sec": 0.38
   },
   {
    "name": "cal/julian/Feasts",
@@ -818,14 +937,14 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.86
   },
   {
    "name": "cal/julian/Month/phone",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.3
   },
   {
    "name": "cal/revised_julian/Month",
@@ -839,56 +958,56 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.33
   },
   {
    "name": "cal/revised_julian/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.65
   },
   {
    "name": "cal/revised_julian/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.89
+   "sec": 0.36
   },
   {
    "name": "cal/revised_julian/Month/coptic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.32
   },
   {
    "name": "cal/revised_julian/Month/phone",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.31
   },
   {
    "name": "cal/coptic/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.32
   },
   {
    "name": "cal/coptic/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.33
   },
   {
    "name": "cal/coptic/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.59
+   "sec": 0.38
   },
   {
    "name": "cal/coptic/Feasts",
@@ -902,21 +1021,21 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.86
   },
   {
    "name": "cal/coptic/Month/phone",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.32
   },
   {
    "name": "cal/ethiopian/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.32
   },
   {
    "name": "cal/ethiopian/Year",
@@ -930,35 +1049,35 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.65
   },
   {
    "name": "cal/ethiopian/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.88
+   "sec": 0.35
   },
   {
    "name": "cal/ethiopian/Month/coptic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.31
   },
   {
    "name": "cal/ethiopian/Month/phone",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.32
   },
   {
    "name": "cal/byzantine/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.32
   },
   {
    "name": "cal/byzantine/Year",
@@ -972,7 +1091,7 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.58
+   "sec": 0.37
   },
   {
    "name": "cal/byzantine/Feasts",
@@ -986,28 +1105,28 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.95
   },
   {
    "name": "cal/byzantine/Month/phone",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.34
   },
   {
    "name": "rule/western/Paschalion",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 2.32
+   "sec": 2.42
   },
   {
    "name": "rule/western/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.36
   },
   {
    "name": "rule/western/Month",
@@ -1021,21 +1140,21 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.12
+   "sec": 0.57
   },
   {
    "name": "rule/eastern/Paschalion",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 2.3
+   "sec": 0.32
   },
   {
    "name": "rule/eastern/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.35
   },
   {
    "name": "rule/eastern/Month",
@@ -1056,7 +1175,7 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.31
   },
   {
    "name": "rule/astronomical/Year",
@@ -1070,98 +1189,98 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 1.25
   },
   {
    "name": "rule/astronomical/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.55
   },
   {
    "name": "hours/roman/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.43
+   "sec": 0.4
   },
   {
    "name": "hours/roman/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.37
   },
   {
    "name": "hours/byzantine/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.31
   },
   {
    "name": "hours/byzantine/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.11
+   "sec": 0.47
   },
   {
    "name": "hours/coptic/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.32
   },
   {
    "name": "hours/coptic/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.37
   },
   {
    "name": "hours/ethiopian/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.31
   },
   {
    "name": "hours/ethiopian/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.43
   },
   {
    "name": "hours/armenian/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.3
   },
   {
    "name": "hours/armenian/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.4
   },
   {
    "name": "hours/west_syriac/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 1.12
   },
   {
    "name": "hours/west_syriac/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.46
   },
   {
    "name": "hours/east_syriac/Hours",
@@ -1175,49 +1294,49 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.37
   },
   {
    "name": "lang/ar/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.37
   },
   {
    "name": "lang/ar/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.87
+   "sec": 0.3
   },
   {
    "name": "lang/ar/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.36
   },
   {
    "name": "lang/ar/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.6
+   "sec": 0.31
   },
   {
    "name": "lang/ar/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.37
   },
   {
    "name": "lang/cop/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "lang/cop/Month",
@@ -1231,28 +1350,28 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.33
   },
   {
    "name": "lang/cop/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 1.13
   },
   {
    "name": "lang/cop/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.35
+   "sec": 0.34
   },
   {
    "name": "lang/cu/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.47
   },
   {
    "name": "lang/cu/Month",
@@ -1266,14 +1385,14 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.35
   },
   {
    "name": "lang/cu/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.13
+   "sec": 0.31
   },
   {
    "name": "lang/cu/Feasts",
@@ -1287,7 +1406,7 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.38
   },
   {
    "name": "lang/en/Month",
@@ -1308,84 +1427,84 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.3
   },
   {
    "name": "lang/en/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.35
   },
   {
    "name": "lang/fi/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 1.17
   },
   {
    "name": "lang/fi/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.38
+   "sec": 0.32
   },
   {
    "name": "lang/fi/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.36
+   "sec": 0.34
   },
   {
    "name": "lang/fi/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.42
   },
   {
    "name": "lang/fi/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.35
+   "sec": 0.36
   },
   {
    "name": "lang/gez/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.13
+   "sec": 0.39
   },
   {
    "name": "lang/gez/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.33
   },
   {
    "name": "lang/gez/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.33
   },
   {
    "name": "lang/gez/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.42
+   "sec": 0.31
   },
   {
    "name": "lang/gez/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.35
+   "sec": 0.33
   },
   {
    "name": "lang/grc/Today",
@@ -1399,35 +1518,35 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.32
   },
   {
    "name": "lang/grc/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.96
   },
   {
    "name": "lang/grc/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.63
   },
   {
    "name": "lang/grc/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.37
   },
   {
    "name": "lang/hu/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.5
   },
   {
    "name": "lang/hu/Month",
@@ -1441,42 +1560,42 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.89
+   "sec": 0.34
   },
   {
    "name": "lang/hu/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.61
+   "sec": 0.31
   },
   {
    "name": "lang/hu/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.35
+   "sec": 0.34
   },
   {
    "name": "lang/ka/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "lang/ka/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.33
   },
   {
    "name": "lang/ka/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.36
   },
   {
    "name": "lang/ka/Hours",
@@ -1490,56 +1609,56 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.35
+   "sec": 0.9
   },
   {
    "name": "lang/la/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.56
   },
   {
    "name": "lang/la/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.32
   },
   {
    "name": "lang/la/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.34
   },
   {
    "name": "lang/la/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.39
   },
   {
    "name": "lang/la/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.86
+   "sec": 0.35
   },
   {
    "name": "lang/ml/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.58
+   "sec": 0.48
   },
   {
    "name": "lang/ml/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.32
   },
   {
    "name": "lang/ml/Year",
@@ -1553,91 +1672,91 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.31
   },
   {
    "name": "lang/ml/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.32
   },
   {
    "name": "lang/ro/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "lang/ro/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.36
+   "sec": 0.87
   },
   {
    "name": "lang/ro/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.36
+   "sec": 0.33
   },
   {
    "name": "lang/ro/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.37
+   "sec": 0.58
   },
   {
    "name": "lang/ro/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.36
+   "sec": 0.35
   },
   {
    "name": "lang/sq/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.47
   },
   {
    "name": "lang/sq/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.84
+   "sec": 0.31
   },
   {
    "name": "lang/sq/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.35
   },
   {
    "name": "lang/sq/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.57
+   "sec": 0.31
   },
   {
    "name": "lang/sq/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.35
   },
   {
    "name": "lang/syc/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "lang/syc/Month",
@@ -1658,42 +1777,42 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.35
+   "sec": 1.13
   },
   {
    "name": "lang/syc/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.38
+   "sec": 0.33
   },
   {
    "name": "lang/xcl/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.41
+   "sec": 0.37
   },
   {
    "name": "lang/xcl/Month",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.31
   },
   {
    "name": "lang/xcl/Year",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.32
   },
   {
    "name": "lang/xcl/Hours",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.13
+   "sec": 0.31
   },
   {
    "name": "lang/xcl/Feasts",
@@ -1707,7 +1826,7 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.32
   },
   {
    "name": "outside/2200/Month",
@@ -1721,28 +1840,28 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.34
   },
   {
    "name": "outside/2200/Feasts",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.34
+   "sec": 0.35
   },
   {
    "name": "edge/2149-12-20/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.31
   },
   {
    "name": "edge/1850-01-05/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.88
   },
   {
    "name": "outside/paschalion-range",
@@ -1756,84 +1875,84 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.33
   },
   {
    "name": "polar/2026-06-21/roman",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.64
+   "sec": 0.61
   },
   {
    "name": "polar/2026-06-21/byzantine",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.32
   },
   {
    "name": "polar/2026-06-21/coptic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.14
+   "sec": 0.33
   },
   {
    "name": "polar/2026-06-21/ethiopian",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.31
+   "sec": 0.33
   },
   {
    "name": "polar/2026-06-21/armenian",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.31
   },
   {
    "name": "polar/2026-06-21/west_syriac",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.31
   },
   {
    "name": "polar/2026-06-21/east_syriac",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.31
   },
   {
    "name": "polar/2026-06-21/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.4
   },
   {
    "name": "polar/2026-12-21/roman",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.61
+   "sec": 0.6
   },
   {
    "name": "polar/2026-12-21/byzantine",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 1.17
   },
   {
    "name": "polar/2026-12-21/coptic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.31
   },
   {
    "name": "polar/2026-12-21/ethiopian",
@@ -1847,42 +1966,42 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.33
+   "sec": 0.32
   },
   {
    "name": "polar/2026-12-21/west_syriac",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.32
+   "sec": 0.31
   },
   {
    "name": "polar/2026-12-21/east_syriac",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.13
+   "sec": 0.33
   },
   {
    "name": "polar/2026-12-21/Today",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.37
   },
   {
    "name": "pascha2025/latin_catholic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.57
+   "sec": 0.55
   },
   {
    "name": "pascha2025/constantinople",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "pascha2025/russian_orthodox",
@@ -1903,21 +2022,21 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.4
+   "sec": 0.38
   },
   {
    "name": "pascha2026/western",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.56
+   "sec": 1.09
   },
   {
    "name": "pascha2026/eastern",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.56
+   "sec": 0.55
   },
   {
    "name": "pascha2026/eastern-not-western",
@@ -1931,35 +2050,35 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.58
+   "sec": 0.55
   },
   {
    "name": "coptic-nativity/2028",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.59
+   "sec": 0.57
   },
   {
    "name": "ethiopian-genna/2028",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 1.1
+   "sec": 0.39
   },
   {
    "name": "compare/2028-01-07",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.35
+   "sec": 0.33
   },
   {
    "name": "click/use-coptic",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.43
+   "sec": 0.42
   },
   {
    "name": "click/month-next",
@@ -1973,35 +2092,35 @@
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.36
+   "sec": 0.35
   },
   {
    "name": "click/restore",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.66
+   "sec": 0.68
   },
   {
    "name": "compass/east",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   },
   {
    "name": "compass/jerusalem",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.38
+   "sec": 1.08
   },
   {
    "name": "compass/sunrise",
    "exceptions": [],
    "failed_checks": [],
    "errors": [],
-   "sec": 0.39
+   "sec": 0.38
   }
  ]
 }
